@@ -1,7 +1,5 @@
-package com.Antonio.daggerlogin;
+package com.Antonio.daggerlogin.root;
 
-
-import android.app.Application;
 import android.content.Context;
 
 import javax.inject.Singleton;
@@ -12,9 +10,9 @@ import dagger.Provides;
 @Module
 public class AppModule {
 
-    private Application app;
+    private App app;
 
-    public AppModule(Application application){
+    public AppModule(App application){
         this.app = application;
     }
 

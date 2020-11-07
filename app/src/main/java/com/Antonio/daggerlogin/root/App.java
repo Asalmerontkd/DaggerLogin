@@ -1,6 +1,8 @@
-package com.Antonio.daggerlogin;
+package com.Antonio.daggerlogin.root;
 
 import android.app.Application;
+
+import com.Antonio.daggerlogin.login.LoginModule;
 
 public class App extends Application {
 
@@ -10,7 +12,10 @@ public class App extends Application {
     public void onCreate() {
         super.onCreate();
 
-        component = DaggerAppComponent.builder().appModule(new AppModule(this)).build();
+        component = DaggerAppComponent.builder()
+                .appModule(new AppModule(this))
+                .loginModule(new LoginModule())
+                .build();
     }
 
     public AppComponent getComponent(){
